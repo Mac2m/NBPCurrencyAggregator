@@ -20,11 +20,11 @@ namespace NBPCurrencyAggregator.API.Services
         private readonly ICurrencyManager _currencyManager;
 
 
-        public NbpApiClient(ILogger<NbpApiClient> logger, HttpClient httpClient, JsonSerializer serializer, ICurrencyManager currencyManager)
+        public NbpApiClient(ILogger<NbpApiClient> logger, HttpClient httpClient, ICurrencyManager currencyManager)
         {
             _logger = logger;
             _httpClient = httpClient;
-            _serializer = serializer;
+            _serializer = new JsonSerializer();
             _currencyManager = currencyManager;
         }
 
